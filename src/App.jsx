@@ -12,8 +12,6 @@ import Signup from "../src/pages/Signup";
 import Tasks from "../src/pages/Tasks";
 /* import ReactCalendar from "./components/ReactCalendar"; */
 
-
-
 /* import { GoogleLogin } from "@react-oauth/google"; */
 
 function App() {
@@ -93,7 +91,7 @@ function App() {
   /*         });
     });
   }; */
-//ALGUMA COISA
+  //ALGUMA COISA
 
   return (
     <div className="App">

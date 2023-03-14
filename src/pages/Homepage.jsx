@@ -4,15 +4,15 @@ import Settings from '../components/Settings'
 import SettingsContext from "../components/SettingsContext";
 /* import { Calendar } from 'react-big-calendar' */
 
-const [showSettings, setShowSettings] = useState(false);
+/* const [showSettings, setShowSettings] = useState(false);
 const [workMinutes, setWorkMinutes] = useState(45);
-const [breakMinutes, setBreakMinutes] = useState(15);
+const [breakMinutes, setBreakMinutes] = useState(15); */
 
 
 function Homepage() {
   return (
     <div>
-      <SettingsContext.Provider value={{
+     {/*  <SettingsContext.Provider value={{
         showSettings,
         setShowSettings,
         workMinutes,
@@ -21,7 +21,7 @@ function Homepage() {
         setBreakMinutes,
       }}>
         {showSettings ? <Settings /> : <Timer />}
-      </SettingsContext.Provider>
+      </SettingsContext.Provider> */}
   HOME
     </div>
   )
