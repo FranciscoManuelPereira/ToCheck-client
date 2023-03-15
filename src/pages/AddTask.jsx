@@ -3,24 +3,38 @@ import { useNavigate } from "react-router-dom";
 /* import taskService from "../services/task.service";
 import { AuthContext } from "../context/auth.context"; */
 import axios from "axios";
+import moment from "moment";
 
-function AddTask() {
+function AddTask({ day }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("Pending");
   const [importance, setImportance] = useState("High Priority");
   const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   /* const [comments, setComments] = useState(""); */
 
   const handleTitle = (e) => setTitle(e.target.value);
   const handleDescription = (e) => setDescription(e.target.value);
   const handleStatus = (e) => setStatus(e.target.value);
   const handleImportance = (e) => setImportance(e.target.value);
-  const handleDate = (e) => setDate(e.target.value);
+  const handleDate = (e) => {
+    //split hours and minutes
+    //13:26
+    //[13, 26]
+    const hours = e.target.value.split(":")[0];
+    const minutes = e.target.value.split(":")[1];
+    const fullDate = moment(day).add(hours, "h").add(minutes, "m").toDate();
+    console.log(fullDate);
+    setDate(fullDate);
+    setTime(e.target.value);
+  };
   /*   const handleComments = (e) => setComments(e.target.value);
    */
   const navigate = useNavigate();
   const storedToken = localStorage.getItem("authToken");
+  const selectedDay = moment(day).format("D/M");
+  console.log(selectedDay);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,6 +74,7 @@ function AddTask() {
   return (
     <section>
       <h1>Create Task:</h1>
+      <h3>{selectedDay}</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
         <input
@@ -116,12 +131,12 @@ function AddTask() {
           </option>
         </select>
 
-        <label htmlFor="user">Date</label>
+        <label htmlFor="date">Hour</label>
         <input
-          type="text"
-          name="user"
-          id="importance"
-          value={date}
+          type="time"
+          name="time"
+          id="time"
+          value={time}
           onChange={handleDate}
         />
 

@@ -10,6 +10,7 @@ import EditTask from "../pages/EditTask";
 import { AuthContext } from "../context/auth.context";
 import Button from "@mui/material/Button";
 import { Drawer } from "@mui/material";
+import taskService from "../services/task.service";
 
 function ReactCalendar() {
   const { setAuthContex, user } = useContext(AuthContext);
@@ -18,6 +19,7 @@ function ReactCalendar() {
   const [state, setState] = useState({
     top: false,
   });
+  const [day, setday] = useState("");
 
   //calendar functionality
   const calendarRef = useRef(null);
@@ -37,6 +39,49 @@ function ReactCalendar() {
   /*   const handleEventAdd = (task) => { //CHAT
     setEvents([...task, event]);
   };  */
+
+  const getTasks = async () => {
+    try {
+      const response = await taskService.getAllTasks();
+      console.log(response.data);
+      setTasks(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getTasks();
+  }, []);
+
+  const toggleDrawer = (anchor, open, task) => (event) => {
+    console.log(event.start);
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    if (!open) setSelectedTask(null);
+
+    if (task) {
+      setSelectedTask(task);
+    }
+
+    setState({ ...state, [anchor]: open });
+    setday(event.start);
+  };
+
+  const toggleEditDrawer = (anchor, open, task, title) => {
+    console.log("here", task);
+
+    if (task) {
+      setSelectedTask({ ...task, title });
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
 
   const onTaskAdded = async (e) => {
     const title = e.title;
@@ -114,66 +159,73 @@ function ReactCalendar() {
 
   return (
     <section>
-     {["top"].map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>Create task</Button>
-          <Drawer
-            PaperProps={{ sx: { height: 350 }, elevation: 20 }}
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-          > 
-            {selectedTask ? (
-              // render EditEvent component if there is a selectedEvent
-              <EditTask
-                selectedTask={selectedTask}
-                onTaskEdited={(event) => onTaskEdited(event)}
-                onTaskDeleted={(event) => onTaskDeleted(event)}
-                onClose={() => {
-                  setSelectedTask(null);
-                  setState({ ...state, top: false });
-                }}
-              />
-            ) : (
-              // render CreateMessage component if there isn't a selectedEvent
-              <AddTask
-                onClose={() => setState({ ...state, [anchor]: false })}
-                onTaskAdded={(event) => onTaskAdded(event)}
-              />
-            )}
-          </Drawer>
-        </React.Fragment>
-      ))}
-
       {user && (
         <>
-          <FullCalendar
-            ref={calendarRef}
-            events={tasks}
-            plugins={[
-              dayGridPlugin,
-              timeGridPlugin,
-              interactionPlugin,
-              listPlugin,
-            ]}
-            initialView="dayGridMonth"
-            editable={true}
-            selectable={true}
-            selectMirror={true}
-            dayMaxEvents={true}
-            weekends={true}
-            timeGridPlugin={true}
-            select={handleEventAdd}
-            headerToolbar={{
-              left: "today prev,next",
-              center: "title",
-              right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
-            }}
-            eventClick={function (arg) {
-              handleEditDrawer(arg);
-            }}
-            datesSet={handleTasksSet}
-          />
+          {["top"].map((anchor) => (
+            <>
+              <React.Fragment key={anchor}>
+                <Drawer
+                  PaperProps={{ sx: { height: 350 }, elevation: 20 }}
+                  anchor={anchor}
+                  open={state[anchor]}
+                  onClose={toggleDrawer(anchor, false)}
+                >
+                  {selectedTask ? (
+                    // render EditEvent component if there is a selectedEvent
+                    <EditTask
+                      selectedTask={selectedTask}
+                      onTaskEdited={(event) => onTaskEdited(event)}
+                      onTaskDeleted={(event) => onTaskDeleted(event)}
+                      onClose={() => {
+                        setSelectedTask(null);
+                        setState({ ...state, top: false });
+                      }}
+                    />
+                  ) : (
+                    // render CreateMessage component if there isn't a selectedEvent
+                    <AddTask
+                      day={day}
+                      onClose={() => setState({ ...state, [anchor]: false })}
+                      onTaskAdded={(event) => onTaskAdded(event)}
+                    />
+                  )}
+                </Drawer>
+              </React.Fragment>
+
+              <FullCalendar
+                ref={calendarRef}
+                events={tasks}
+                plugins={[
+                  dayGridPlugin,
+                  timeGridPlugin,
+                  interactionPlugin,
+                  listPlugin,
+                ]}
+                initialView="dayGridMonth"
+                editable={true}
+                selectable={true}
+                selectMirror={true}
+                dayMaxEvents={true}
+                weekends={true}
+                timeGridPlugin={true}
+                select={toggleDrawer(anchor, true)}
+                headerToolbar={{
+                  left: "today prev,next",
+                  center: "title",
+                  right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
+                }}
+                eventClick={(e) =>
+                  toggleEditDrawer(
+                    anchor,
+                    true,
+                    e.event._def.extendedProps,
+                    e.event._def.title
+                  )
+                }
+                datesSet={handleTasksSet}
+              />
+            </>
+          ))}
         </>
       )}
     </section>

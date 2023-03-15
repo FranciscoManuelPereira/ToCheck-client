@@ -3,9 +3,9 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-function EditTask() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+function EditTask({ selectedTask }) {
+  const [title, setTitle] = useState(selectedTask.title);
+  const [description, setDescription] = useState(selectedTask.description);
   const [status, setStatus] = useState("");
 
   const [importance, setImportance] = useState("");
@@ -17,9 +17,9 @@ function EditTask() {
 
   const navigate = useNavigate();
 
-  const { id } = useParams();
+  //const { id } = useParams();
   const storedToken = localStorage.getItem("authToken");
-  const getTask = async () => {
+  /*   const getTask = async () => {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/tasks/${id}`,
@@ -38,15 +38,17 @@ function EditTask() {
     } catch (error) {
       console.log(error);
     }
-  };
+  }; */
 
   const deleteTask = async () => {
     try {
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_URL}/tasks/${id}`, {
+        `${import.meta.env.VITE_API_URL}/tasks/${id}`,
+        {
           headers: {
             Authorization: `Bearer ${storedToken}`,
-          }}
+          },
+        }
       );
       console.log(response);
 
@@ -56,9 +58,9 @@ function EditTask() {
     }
   };
 
-  useEffect(() => {
+  /*   useEffect(() => {
     getTask();
-  }, []);
+  }, []); */
 
   const handleSubmit = async (e) => {
     e.preventDefault();
