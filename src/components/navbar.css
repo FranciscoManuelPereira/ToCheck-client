@@ -1,0 +1,13 @@
+.nav-bar {
+    background-color: rgb(245, 235, 200);
+    padding: 14px 0;
+
+  }
+
+.nav-items{
+    font-size: 2em;
+    text-decoration: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #110f0f;
+    color: white;
+  }
