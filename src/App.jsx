@@ -10,6 +10,7 @@ import Homepage from "../src/pages/Homepage";
 import Login from "../src/pages/Login";
 import Signup from "../src/pages/Signup";
 import Tasks from "../src/pages/Tasks";
+import Footer from "./components/Footer";
 import LoginGoogle2 from "./components/LoginGoogle2";
 import Logout from "./components/Logout";
 import { useEffect } from "react";
@@ -57,6 +58,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }
