@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import ReactCalendar from '../components/ReactCalendar';
 /* import PomodoroTimer from '../components/PomodoroTimer'; */
 import Settings from '../components/Settings'
 import SettingsContext from "../components/SettingsContext";
@@ -6,13 +7,13 @@ import SettingsContext from "../components/SettingsContext";
 
 /* const [showSettings, setShowSettings] = useState(false);
 const [workMinutes, setWorkMinutes] = useState(45);
-const [breakMinutes, setBreakMinutes] = useState(15); */
-
+const [breakMinutes, setBreakMinutes] = useState(15);
+ */
 
 function Homepage() {
   return (
     <div>
-     {/*  <SettingsContext.Provider value={{
+   {/*    <SettingsContext.Provider value={{
         showSettings,
         setShowSettings,
         workMinutes,
@@ -22,6 +23,7 @@ function Homepage() {
       }}>
         {showSettings ? <Settings /> : <Timer />}
       </SettingsContext.Provider> */}
+<ReactCalendar/>
   HOME
     </div>
   )
