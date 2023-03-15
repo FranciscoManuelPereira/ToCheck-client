@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import taskService from "../services/task.service";
+/* import taskService from "../services/task.service"; */
 
 function Tasks() {
 
       //CONNECT THE API CALENDAR
- const gapi = window.gapi;
+/*  const gapi = window.gapi;
   const CLIENT_ID =
     "343027757721-ud4anqta8isb3p6h830dhf37qnhifvsm.apps.googleusercontent.com";
   const API_KEY = "AIzaSyAbrGkakOvFnYK_p8ATm0YXvbs6UpuHzW8";
@@ -31,14 +31,14 @@ function Tasks() {
       gapi.auth2
         .getAuthInstance()
         .signIn()
-        .then(() => { 
+        .then(() => {  */
 
   // Refer to the JavaScript quickstart on how to setup the environment:
   // https://developers.google.com/calendar/quickstart/js
   // Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
   // stored credentials.
 
-  var event = {
+  /* var event = {
             summary: "Google I/O 2015",
             location: "800 Howard St., San Francisco, CA 94103",
             description:
@@ -68,19 +68,19 @@ function Tasks() {
           var request = gapi.client.calendar.events.insert({
             calendarId: "primary",
             resource: event,
-          }); 
+          });  */
 
   //WHAT WAS ON DOCUMENTATION
-request.execute(function (event) {
+/* request.execute(function (event) {
             appendPre("Event created: " + event.htmlLink);
-          }); 
+          });  */
   //WHAT WAS ON HIS PAGE
-request.execute((event) => {
+/*  request.execute((event) => {
             window.open(event.htmlLink);
           }); 
            });
     });
-  };  
+  };   */
   const [tasks, setTasks] = useState([]);
 
   const getTasks = async () => {
@@ -90,14 +90,14 @@ request.execute((event) => {
       setTasks(response.data);
     } catch (error) {
       console.log(error);
-    }
+    }         
   };
 
   useEffect(() => {
     getTasks();
   }, []);
 
-  gapi.client.calendar.events.list({
+/*   gapi.client.calendar.events.list({
     'calendarId': 'primary',
     'timeMin': (new Date()).toISOString(),
     'showDeleted': false,
@@ -107,18 +107,18 @@ request.execute((event) => {
   }).then(response => {
     const events = response.result.items
     console.log('EVENTS: ', events)
-  })
-
+  }) */
+ 
   return (
     <section>
       <h1>Tasks</h1>
-      <button onClick={handleClick}>Add Task on Google Calendar</button>
+      {/* <button onClick={handleClick}>Add Task on Google Calendar</button>
       <a 
       className='App-Link'
       href='https://reactjs.org'
       target='_blank'
       rel='noopener noreferrer'
-     >Learn React</a> 
+     >Learn React</a>  */}
       {tasks.map((task) => {
         return (
           <Link to={`/tasks/edit/${task._id}`} key={task._id}>

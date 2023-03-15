@@ -3,9 +3,9 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-function EditTask() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+function EditTask({ selectedTask, getTasks }) {
+  const [title, setTitle] = useState(selectedTask.title);
+  const [description, setDescription] = useState(selectedTask.description);
   const [status, setStatus] = useState("");
 
   const [importance, setImportance] = useState("");
@@ -17,9 +17,9 @@ function EditTask() {
 
   const navigate = useNavigate();
 
-  const { id } = useParams();
+  //const { id } = useParams();
   const storedToken = localStorage.getItem("authToken");
-  const getTask = async () => {
+  /*   const getTask = async () => {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/tasks/${id}`,
@@ -38,38 +38,43 @@ function EditTask() {
     } catch (error) {
       console.log(error);
     }
-  };
+  }; */
 
   const deleteTask = async () => {
     try {
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_URL}/tasks/${id}`, {
+        `${import.meta.env.VITE_API_URL}/tasks/${selectedTask._id}`,
+        {
           headers: {
             Authorization: `Bearer ${storedToken}`,
-          }}
+          },
+        }
       );
       console.log(response);
+      getTasks();
 
-      navigate("/tasks");
+      
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(() => {
+  /*   useEffect(() => {
     getTask();
-  }, []);
+  }, []); */
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    /* const id = e.id; */
     const body = { title, description, status, importance };
     try {
-      await axios.put(`${import.meta.env.VITE_API_URL}/tasks/${id}`, body, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/tasks/${selectedTask._id}`, body, {
         headers: {
           Authorization: `Bearer ${storedToken}`,
         },
       });
-      navigate(`/tasks`);
+      getTasks();
+     
     } catch (error) {
       console.log(error);
     }
@@ -132,6 +137,10 @@ function EditTask() {
       </form>
 
       <button onClick={deleteTask}>Delete</button>
+
+
+
+      
     </section>
   );
 }
