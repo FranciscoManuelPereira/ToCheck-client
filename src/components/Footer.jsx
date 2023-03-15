@@ -5,7 +5,7 @@ function Footer() {
   return (
 <footer>
     <div className="footer">
-        <img className="footer-img" src="/src/assets/TocheckLogo-removebg-preview.png" alt="footer logo image"/>
+        <img className="footer-img" src="/src/assets/ToCheckLogo.png" alt="footer logo image"/>
         <div className="footer-body">
             <p className="card-text">TOCHÉ in your life flow!</p>
             <p className="card-text">contact@tocheck.com</p>

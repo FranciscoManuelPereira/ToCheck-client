@@ -43,8 +43,9 @@ function ReactCalendar() {
   const getTasks = async () => {
     try {
       const response = await taskService.getAllTasks();
-      console.log(response.data);
+      console.log(response);
       setTasks(response.data);
+      setState({ ...state, ["top"]: false });
     } catch (error) {
       console.log(error);
     }
@@ -158,7 +159,7 @@ function ReactCalendar() {
   }, [user, state]);
 
   return (
-    <section>
+    <section className="CalendarArea">
       {user && (
         <>
           {["top"].map((anchor) => (
@@ -174,6 +175,7 @@ function ReactCalendar() {
                     // render EditEvent component if there is a selectedEvent
                     <EditTask
                       selectedTask={selectedTask}
+                      getTasks = {getTasks}
                       onTaskEdited={(event) => onTaskEdited(event)}
                       onTaskDeleted={(event) => onTaskDeleted(event)}
                       onClose={() => {
@@ -191,8 +193,8 @@ function ReactCalendar() {
                   )}
                 </Drawer>
               </React.Fragment>
-
-              <FullCalendar
+              <div className="Calendar">
+              <FullCalendar 
                 ref={calendarRef}
                 events={tasks}
                 plugins={[
@@ -224,6 +226,7 @@ function ReactCalendar() {
                 }
                 datesSet={handleTasksSet}
               />
+              </div>
             </>
           ))}
         </>

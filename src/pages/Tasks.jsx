@@ -90,7 +90,7 @@ function Tasks() {
       setTasks(response.data);
     } catch (error) {
       console.log(error);
-    }
+    }         
   };
 
   useEffect(() => {

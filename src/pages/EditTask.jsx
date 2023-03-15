@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-function EditTask({ selectedTask }) {
+function EditTask({ selectedTask, getTasks }) {
   const [title, setTitle] = useState(selectedTask.title);
   const [description, setDescription] = useState(selectedTask.description);
   const [status, setStatus] = useState("");
@@ -43,7 +43,7 @@ function EditTask({ selectedTask }) {
   const deleteTask = async () => {
     try {
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_URL}/tasks/${id}`,
+        `${import.meta.env.VITE_API_URL}/tasks/${selectedTask._id}`,
         {
           headers: {
             Authorization: `Bearer ${storedToken}`,
@@ -51,8 +51,9 @@ function EditTask({ selectedTask }) {
         }
       );
       console.log(response);
+      getTasks();
 
-      navigate("/tasks");
+      
     } catch (error) {
       console.log(error);
     }
@@ -64,14 +65,16 @@ function EditTask({ selectedTask }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    /* const id = e.id; */
     const body = { title, description, status, importance };
     try {
-      await axios.put(`${import.meta.env.VITE_API_URL}/tasks/${id}`, body, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/tasks/${selectedTask._id}`, body, {
         headers: {
           Authorization: `Bearer ${storedToken}`,
         },
       });
-      navigate(`/tasks`);
+      getTasks();
+     
     } catch (error) {
       console.log(error);
     }
@@ -134,6 +137,10 @@ function EditTask({ selectedTask }) {
       </form>
 
       <button onClick={deleteTask}>Delete</button>
+
+
+
+      
     </section>
   );
 }

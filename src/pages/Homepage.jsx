@@ -1,19 +1,21 @@
 import React, {useState} from 'react';
 import ReactCalendar from '../components/ReactCalendar';
-/* import PomodoroTimer from '../components/PomodoroTimer'; */
-import Settings from '../components/Settings'
+import PomodoroTimer from '../components/PomodoroTimer'
+import Settings from '../components/Settings';
 import SettingsContext from "../components/SettingsContext";
-/* import { Calendar } from 'react-big-calendar' */
-
-/* const [showSettings, setShowSettings] = useState(false);
-const [workMinutes, setWorkMinutes] = useState(45);
-const [breakMinutes, setBreakMinutes] = useState(15);
- */
+import "./Homepage.css";
+import "../components/slider.css"
 
 function Homepage() {
+
+const [showSettings, setShowSettings] = useState(false);
+const [workMinutes, setWorkMinutes] = useState(45);
+const [breakMinutes, setBreakMinutes] = useState(15);
+
   return (
     <div>
-   {/*    <SettingsContext.Provider value={{
+      <div className='timerArea'>
+      <SettingsContext.Provider value={{
         showSettings,
         setShowSettings,
         workMinutes,
@@ -21,10 +23,10 @@ function Homepage() {
         setWorkMinutes,
         setBreakMinutes,
       }}>
-        {showSettings ? <Settings /> : <Timer />}
-      </SettingsContext.Provider> */}
+        {showSettings ? <Settings /> : <PomodoroTimer />}
+      </SettingsContext.Provider>
+      </div>
 <ReactCalendar/>
-  HOME
     </div>
   )
 }

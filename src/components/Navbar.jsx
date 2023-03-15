@@ -11,7 +11,7 @@ function Navbar() {
       <Link className="nav-items" to="/"> Home </Link>
       {loggedIn ? (
         <>
-          <span>Hello {user.name}</span>
+          <span className='helloUser'>Hello {user.name}</span>
           <Link className="nav-items" to="/tasks"> Tasks </Link>
           <Link className="nav-items" to="/tasks/new"> Add a Task </Link>
           <button onClick={logout}>Logout</button>

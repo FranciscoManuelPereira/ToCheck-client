@@ -68,8 +68,9 @@ function PomodoroTimer() {
   if (seconds < 10) seconds = "0" + seconds;
 
   return (
-    <div>
-      <CircularProgressbar
+    <div className="MainTimer">
+      <div className="CircularProgressbar">
+      <CircularProgressbar 
         value={percentage}
         text={minutes + ":" + seconds}
         styles={buildStyles({
@@ -78,6 +79,7 @@ function PomodoroTimer() {
           tailColor: "rgba(255,255,255,.2)",
         })}
       />
+      </div>
       <div style={{ marginTop: "20px" }}>
         {isPaused ? (
           <PlayButton
@@ -86,6 +88,7 @@ function PomodoroTimer() {
               isPausedRef.current = false;
             }}
           />
+          
         ) : (
           <PauseButton
             onClick={() => {

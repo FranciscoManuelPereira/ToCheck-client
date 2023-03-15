@@ -1,5 +1,5 @@
 .nav-bar {
-    background-color: rgba(1, 1, 1, 0.914);
+    background-color: rgb(0, 0, 0);
     padding: 14px 0;
 
   }
@@ -9,5 +9,9 @@
     text-decoration: none;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #fcefef;
+    color: white;
+  }
+
+  .helloUser{
     color: white;
   }
