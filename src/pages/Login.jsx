@@ -5,7 +5,6 @@ import { AuthContext } from "../context/auth.context";
 import LoginGoogle from "./LoginGoogle";
 import '../pages/login.css'
 
-
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,6 +39,7 @@ function Login() {
     }
   };
 
+
   return (
     <>
       <div id='main'>
@@ -70,14 +70,11 @@ function Login() {
 
             <button className='login-btn' type="submit">Login</button>
             <p className="text">Or login using</p>
-
-            
+                        
 
             <div className='alt-login'>
               <div className='facebook'></div>
               <div className='google'>
-
-              {/* <LoginGoogle/> */}
               
               </div>
             </div>
