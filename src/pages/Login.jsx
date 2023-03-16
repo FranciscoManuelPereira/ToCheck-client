@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import LoginGoogle from "./LoginGoogle";
-import '../pages/login.css'
+import "../pages/login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -39,19 +39,16 @@ function Login() {
     }
   };
 
-
   return (
     <>
-      <div id='main'>
-        <section>
-        <div id="signInDiv">
-
-        
+      <div id="main1">
+        <section className='loginSection'>
           <h2>Login</h2>
 
           <form onSubmit={handleSubmit}>
-            <label htmlFor="email" > Email</label>
-            <input placeholder="EMAIL"
+            <label htmlFor="email"> Email</label>
+            <input
+              placeholder="EMAIL"
               type="email"
               name="email"
               id="email"
@@ -60,7 +57,8 @@ function Login() {
             />
 
             <label htmlFor="password"> Password</label>
-            <input placeholder="PASSWORD"
+            <input
+              placeholder="PASSWORD"
               type="password"
               name="password"
               id="password"
@@ -68,21 +66,21 @@ function Login() {
               onChange={handlePassword}
             />
 
-            <button className='login-btn' type="submit">Login</button>
+            <button className="login-btn" type="submit">
+              Login
+            </button>
             <p className="text">Or login using</p>
-                        
 
-            <div className='alt-login'>
-              <div className='facebook'></div>
-              <div className='google'>
-              
-              </div>
+            <div className="alt-login">
+              <div className="facebook"></div>
+              <div className="google"></div>
             </div>
           </form>
 
           <p>Don't have an account?</p>
-          <Link className='signup-btn' to="/signup">Signup HERE</Link>
-          </div>
+          <Link className="signup-btn" to="/signup">
+            Signup HERE
+          </Link>
         </section>
       </div>
     </>

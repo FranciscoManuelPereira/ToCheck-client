@@ -1,77 +1,128 @@
 * {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Trebuchet MS";
+  font-family: "Haettenschweiler";
 }
 
-.page {
-  height: 100vh;
-  width: 100%;
+#main1 {
+  background-color: rgb(250, 223, 176);
+  width:100%;
+  background-repeat: no-repeat;
+  height: 21.9em;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
-h2 {
-  font-family: "Cambria";
-  font-size: 2.2em;
+.loginSection h2{
+  color: rgb(34,48,63);
+  margin-bottom: 30px;
 }
-#signInDiv {
+
+h3 {
+  animation: move 2s ease-in-out;
+  margin-bottom: 2px;
+  line-height: 1.5;
+  font-family: "Helvetica";
+}
+
+.h3:before{
+  content: "\1F600";
+  font-size: large;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes color {
+  0% {
+    color: orange;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: orange;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.loginSection {
   background-color: white;
-  width: 30em;
-  height: 28em;
-  position: relative;
-  border-radius: 1em;
-  box-shadow: 0 0.12em 1.6em rgb(156, 156, 156);
+  width: 25vw;
+  height: 58vh;
+  font-size: 80%;
+  font-weight: bolder;
+  margin-top: 15vh;
+  opacity: 0.8;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
+  border: 1.5px solid white;
+  border-radius: 18px;
+  box-shadow: 10px 10px 30px white;
+  margin-bottom:70px;
+  margin-left: 130px;
+/*   position: fixed; */
+  bottom: -100px; /* Start off the screen */
+  left: 20%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for horizontal centering */
+  animation: slide-up 0.5s forwards;
 }
 
-.alt-login {
-  width: 30%;
-  height: 3em;
+@keyframes slide-up {
+  to {
+    top: 0; /* Move up to the top of the screen */
+  }
+}
+
+.loginSection form {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  margin-bottom: 9px;
 }
 
-.alt-login div {
-  width: 40%;
-  height: 90%;
-  border-radius: 0.25em;
-  background-color: rgba(210, 224, 213, 0.24);
-  box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-
-.input {
-  border: none;
-  background-color: rgb(229, 226, 226);
-  height: 4em;
-  width: 80%;
-  border-radius: 0.3em;
-  text-align: center;
-  padding: 2em;
-}
-
-input:focus {
-  outline-color: rgb(9, 51, 30);
-}
-
-.google {
-  background-image: url("../assets/google-icon.png");
-}
-.facebook {
-  background-image: url("../assets/Facebook_icon.svg.png");
-}
-
-.signup-btn {
-  width: 5em;
-  height: 4em;
-  box-shadow: 0 12px 16px 0 rgba(94, 87, 87, 0.24);
+.loginSection input {
+  display: block; /* to ensure the border wraps around the label text */
+  border: 1px solid gray; /* the border style, width, and color */
+  padding: 5px; /* optional: adds some space between the border and the label text */
+  height: 30px;
   border-radius: 5px;
+}
+
+.loginSection button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin-top: 9px;
+  height: 5vh;
+}
+
+.loginSection button:active {
+  transform: scale(0.95);
+}
+
+.loginSection button:hover {
+  border: 2px solid #ccc;
+  background-color: rgb(249, 242, 207);
 }

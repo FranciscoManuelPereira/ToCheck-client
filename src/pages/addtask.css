@@ -11,6 +11,7 @@ h3 {
 
 .subtitleAddTask {
   margin-bottom: 2px;
+  padding-left: 2px;
   line-height: 1.5;
   animation: move 2s ease-in-out;
 }
@@ -75,7 +76,7 @@ h1 {
   height: 60vh;
   font-size: 80%;
   font-weight: bolder;
-  margin-top: 4vh;
+  margin-top: 3.8vh;
   opacity: 0.9;
   border-radius: 1px;
   display: flex;
@@ -83,7 +84,7 @@ h1 {
   justify-content: center;
   align-items: center;
   margin-left: 32vw;
-  border:white;
+  border: 2px solid white;
   border-radius: 18px;
   box-shadow: 0 0 20px white;
   background-color: #ccc;
