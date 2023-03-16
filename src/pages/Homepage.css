@@ -2,11 +2,28 @@
     --red: #f54e4e;
     --green: #4aec8c;
   }
+  .background{
+    background: linear-gradient(133deg, #e4cd6d, #f0ae53, #dbbec7);
+    background-size: 600% 600%;
+
+    -webkit-animation: CSSGRADIENTANIMATOR 28s ease infinite;
+    animation: CSSGRADIENTANIMATOR 28s ease infinite;
+  }
+  @-webkit-keyframes CSSGRADIENTANIMATOR {
+    0%{background-position:0% 14%}
+    50%{background-position:100% 87%}
+    100%{background-position:0% 14%}
+}
+@keyframes CSSGRADIENTANIMATOR {
+    0%{background-position:0% 14%}
+    50%{background-position:100% 87%}
+    100%{background-position:0% 14%}
+}
+
 .timerArea{
     display:flex;
-    justify-content: space-evenly;
-    align-items: start;
-
+    justify-content: flex-end;
+    align-items: baseline;
     background-color: #000000;
   color: #eee;
   padding-top: 0px;
@@ -17,41 +34,48 @@
 }
 .MainTimer{
     display: flex;
-}
-.CircularProgressbar{
-        width: 10vw;
+    justify-content: space-evenly;
 
 }
-.timerButton{
+.CircularProgressbar{
+        width: 5vw;
+
+}
+button.timerButton{
     background-color: transparent;
     color: white;
     border:0;
     display: inline-block;
-    width: 5vw;
+    width: 4vw;
     cursor: pointer;
 }
 button.with-text{
-    width: 5vw;
+    background-color: transparent;
+    width: auto;
     background-color:rgba(255,255,255,0.1);
     border-radius:10px;
     padding: 10px 20px;
     font-size: 1.4rem;
     line-height: 36px;
+    
   }
   button.with-text svg{
-    width: auto;
-    float:left;
-    margin-right: 5px;
+    width: 20px;
+  float:left;
+  margin-right: 5px;
   }
   .CalendarArea{
     display: flex;
     justify-content: center;
-    margin: 8vh;
-    border:#000000 solid;
-    border-radius: 10%;
+padding: 10vh;
+   
   }
 
   .Calendar{
-   width: 55vw;
+    background-color: white;
+   width: 60vw;
+   padding: 30px 30px;
+   border-radius: 5%;
+   box-shadow: 0 10px 25px white;
     
   }

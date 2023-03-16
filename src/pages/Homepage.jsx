@@ -13,7 +13,7 @@ const [workMinutes, setWorkMinutes] = useState(45);
 const [breakMinutes, setBreakMinutes] = useState(15);
 
   return (
-    <div>
+    <div className='background'>
       <div className='timerArea'>
       <SettingsContext.Provider value={{
         showSettings,
