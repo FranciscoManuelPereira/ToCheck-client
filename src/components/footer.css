@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  position: fixed;
   bottom: 0;
   left: 0;
   z-index: 1;
@@ -14,13 +13,8 @@
 
 .footer-img {
   width: 35vh;
-  position: relative;
-  top: 20px;
-  left: 20px;
-  transform: translate(-35px, 11.9px);
+  transform: translate(-20px, 35px);
   z-index: 1;
-
-  /* left: 2vw; */
 }
 
 .footer-body {
@@ -30,7 +24,6 @@
   margin-top: 0;
   margin-bottom: 3vh;
   margin-left: 5vh;
-  z-index: 0;
 }
 
 .footer a {
