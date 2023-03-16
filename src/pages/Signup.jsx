@@ -32,11 +32,14 @@ function Signup() {
 
   return (
     <section className='signupSection'>
-      <h1>Your life flow will change now upon your Signup!</h1>
+    <div className='SignupDiv'>
+      <h1>Your life flow will change <hr/> upon your Signup!</h1>
       <h4>After this step you will be able to organize your life better</h4>
       <h4>If you already have a Google Account <Link>Click here!</Link></h4>
 
-      <div className='signupDiv'>
+      </div>
+
+      <div className='mainDivForm'>
       
       <h2>Signup</h2>
 
@@ -60,8 +63,6 @@ function Signup() {
       </form>
       </div>
 
-      <p>Again, if you already have a Google Account, click on the below link!</p>
-      <Link to="/login">Login without Google</Link>
     </section>
   );
 }

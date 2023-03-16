@@ -69,16 +69,11 @@ function Login() {
             <button className="login-btn" type="submit">
               Login
             </button>
-            <p className="text">Or login using</p>
-
-            <div className="alt-login">
-              <div className="facebook"></div>
-              <div className="google"></div>
-            </div>
+          
           </form>
 
-          <p>Don't have an account?</p>
-          <Link className="signup-btn" to="/signup">
+          <p>Don't have an account? Click on the link below! </p>
+          <Link className="log-signup-btn" to="/signup">
             Signup HERE
           </Link>
         </section>

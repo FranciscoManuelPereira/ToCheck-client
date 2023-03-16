@@ -82,7 +82,7 @@ h3 {
   border-radius: 18px;
   box-shadow: 10px 10px 30px white;
   margin-bottom:70px;
-  margin-left: 130px;
+  margin-left: 290px;
 /*   position: fixed; */
   bottom: -100px; /* Start off the screen */
   left: 20%; /* Center horizontally */
@@ -105,17 +105,18 @@ h3 {
 .loginSection input {
   display: block; /* to ensure the border wraps around the label text */
   border: 1px solid gray; /* the border style, width, and color */
-  padding: 5px; /* optional: adds some space between the border and the label text */
+  margin-bottom: 10px;
+  padding: 6px; /* optional: adds some space between the border and the label text */
   height: 30px;
   border-radius: 5px;
 }
 
 .loginSection button {
   cursor: pointer;
-  border: none;
+  border:none;
   border-radius: 4px;
   margin-top: 9px;
-  height: 5vh;
+  height: 8vh;
 }
 
 .loginSection button:active {
@@ -125,4 +126,13 @@ h3 {
 .loginSection button:hover {
   border: 2px solid #ccc;
   background-color: rgb(249, 242, 207);
+}
+
+.loginSection label {
+  margin-bottom: 3px;
+}
+.log-signup-btn{
+margin-top: 10px;
+text-decoration: none;
+color: black
 }
