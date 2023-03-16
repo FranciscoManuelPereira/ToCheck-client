@@ -186,6 +186,7 @@ function ReactCalendar() {
                   ) : (
                     // render CreateMessage component if there isn't a selectedEvent
                     <AddTask
+                    getTasks = {getTasks}
                       day={day}
                       onClose={() => setState({ ...state, [anchor]: false })}
                       onTaskAdded={(event) => onTaskAdded(event)}

@@ -31,22 +31,24 @@ function Signup() {
   const navigate = useNavigate();
 
   return (
-    <section>
+    <section className='signupSection'>
       <h1>Your life flow will change now upon your Signup!</h1>
       <h4>After this step you will be able to organize your life better</h4>
       <h4>If you already have a Google Account <Link>Click here!</Link></h4>
 
+      <div className='signupDiv'>
+      
       <h2>Signup</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form className='signUpForm' onSubmit={handleSubmit}>
         <label htmlFor="name"> Name</label>
-        <input type="text" name="name" id="name" value={name} onChange={handleName} />
+        <input className='inputSignup' type="text" name="name" id="name" value={name} onChange={handleName} />
 
         <label htmlFor="email"> Email</label>
-        <input type="email" name="email" id="email" value={email} onChange={handleEmail} />
+        <input className='inputSignup' type="email" name="email" id="email" value={email} onChange={handleEmail} />
 
         <label htmlFor="password"> Password</label>
-        <input
+        <input className='inputSignup'
           type="password"
           name="password"
           id="password"
@@ -54,8 +56,9 @@ function Signup() {
           onChange={handlePassword}
         />
 
-        <button type="submit">Create account</button>
+        <button className='btnSignup' type="submit">Create account</button>
       </form>
+      </div>
 
       <p>Again, if you already have a Google Account, click on the below link!</p>
       <Link to="/login">Login without Google</Link>

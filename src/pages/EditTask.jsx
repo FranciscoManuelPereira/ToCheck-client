@@ -7,6 +7,7 @@ function EditTask({ selectedTask, getTasks }) {
   const [title, setTitle] = useState(selectedTask.title);
   const [description, setDescription] = useState(selectedTask.description);
   const [status, setStatus] = useState("");
+/*   const [commentDescription, setcommentDescription] = useState(""); */
 
   const [importance, setImportance] = useState("");
 
@@ -14,6 +15,7 @@ function EditTask({ selectedTask, getTasks }) {
   const handleDescription = (e) => setDescription(e.target.value);
   const handleStatus = (e) => setDescription(e.target.value);
   const handleImportance = (e) => setDescription(e.target.value);
+/*   const handleCommentDescription = (e) => setcommentDescription(e.target.value); */
 
   const navigate = useNavigate();
 
@@ -52,8 +54,6 @@ function EditTask({ selectedTask, getTasks }) {
       );
       console.log(response);
       getTasks();
-
-      
     } catch (error) {
       console.log(error);
     }
@@ -68,52 +68,80 @@ function EditTask({ selectedTask, getTasks }) {
     /* const id = e.id; */
     const body = { title, description, status, importance };
     try {
-      await axios.put(`${import.meta.env.VITE_API_URL}/tasks/${selectedTask._id}`, body, {
-        headers: {
-          Authorization: `Bearer ${storedToken}`,
-        },
-      });
+      await axios.put(
+        `${import.meta.env.VITE_API_URL}/tasks/${selectedTask._id}`,
+        body,
+        {
+          headers: {
+            Authorization: `Bearer ${storedToken}`,
+          },
+        }
+      );
       getTasks();
-     
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
-  return (
-    <section>
-      <h1>Edit Task:</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          value={title}
-          onChange={handleTitle}
-        />
+/*     const handleCommentDescription = async (e) => {
+      e.preventDefault();
+      const body = { description };
+      try {
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_URL}/comments/${selectedTask._id}`,
+          body,
+          {
+            headers: {
+              Authorization: `Bearer ${storedToken}`,
+            },
+          }
+ 
+        );
+        const newComment = response.data; // assuming the server returns the newly created comment
+        setSelectedTask((prevTask) => ({
+          ...prevTask,
+          comments: [...prevTask.comments, newComment],
+        }));
+      } catch (err) {
+        console.error(err);
+      }
+    };
+  } */
 
-        <label htmlFor="description">Description</label>
-        <input
-          type="text"
-          name="description"
-          id="description"
-          value={description}
-          onChange={handleDescription}
-        />
+    return (
+      <section>
+        <h1>Edit Task:</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            value={title}
+            onChange={handleTitle}
+          />
 
-        <label htmlFor="status">Update status:</label>
-        <select
-          name="status"
-          id="status"
-          onChange={handleStatus}
-          value={status}
-        >
-          <option value="pending">Pending</option>
-          <option value="inProgress">In Progress</option>
-          <option value="completed">Completed</option>
-        </select>
-        {/*         <input
+          <label htmlFor="description">Description</label>
+          <input
+            type="text"
+            name="description"
+            id="description"
+            value={description}
+            onChange={handleDescription}
+          />
+
+          <label htmlFor="status">Update status:</label>
+          <select
+            name="status"
+            id="status"
+            onChange={handleStatus}
+            value={status}
+          >
+            <option value="pending">Pending</option>
+            <option value="inProgress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+          {/*         <input
           type="text"
           name="status"
           id="status"
@@ -121,28 +149,39 @@ function EditTask({ selectedTask, getTasks }) {
           
         /> */}
 
-        <label htmlFor="importance">Update Importance:</label>
-        <select
-          name="importance"
-          id="importance"
-          onChange={handleImportance}
-          value={importance}
-        >
-          <option value="highPriority">High Priority</option>
-          <option value="important">Important</option>
-          <option value="normal">Normal</option>
-        </select>
+          <label htmlFor="importance">Update Importance:</label>
+          <select
+            name="importance"
+            id="importance"
+            onChange={handleImportance}
+            value={importance}
+          >
+            <option value="highPriority">High Priority</option>
+            <option value="important">Important</option>
+            <option value="normal">Normal</option>
+          </select>
 
-        <button type="submit">Edit task</button>
-      </form>
+          <button type="submit">Edit task</button>
+        </form>
+{/* 
+        <h2>Comments</h2> */}
+        {/*       {task && */}
+ {/*        <form onSubmit={handleCommentDescription}>
+          <label htmlFor="description">Comment Description</label>
+          <input
+            type="description"
+            name="description"
+            id="description"
+            value={description}
+            onChange={handleCommentDescription}
+          />
+        </form> */}
 
-      <button onClick={deleteTask}>Delete</button>
+        {/*       {task && <Link to={`/projects/edit/${project._id}`}> Edit project </Link>} */}
 
-
-
-      
-    </section>
-  );
+        <button onClick={deleteTask}>Delete</button>
+      </section>
+    );
 }
 
 export default EditTask;

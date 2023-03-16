@@ -5,7 +5,7 @@ import { AuthContext } from "../context/auth.context"; */
 import axios from "axios";
 import moment from "moment";
 
-function AddTask({ day }) {
+function AddTask({ day, getTasks }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("Pending");
@@ -64,8 +64,8 @@ function AddTask({ day }) {
       setStatus("");
       setImportance("");
       setDate("");
+      getTasks();
       console.log("a", a);
-      navigate("/tasks");
     } catch (error) {
       console.log("a", error);
     }
