@@ -70,9 +70,10 @@ function PomodoroTimer() {
   if (seconds < 10) seconds = "0" + seconds;
 
   return (
-    <div className="MainTimer">
+    <div /* className="MainTimer" */>
       {user && (
         <>
+        <section className='timerArea'>
       <div className="CircularProgressbar">
       <CircularProgressbar 
         value={percentage}
@@ -105,6 +106,7 @@ function PomodoroTimer() {
       <div style={{ marginTop: "20px" }}>
         <SettingsButton onClick={() => settingsInfo.setShowSettings(true)} />
       </div>
+      </section>
       </>
         )}
     </div>

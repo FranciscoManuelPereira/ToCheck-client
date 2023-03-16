@@ -1,6 +1,6 @@
 import React from "react";
 import "../components/footer.css";
-import LogoImg from "../assets/TocheckLogo.png";
+import LogoImg from "../assets/TocheckLogo-removebg-preview.png";
 
 function Footer() {
   return (

@@ -14,7 +14,10 @@ const [breakMinutes, setBreakMinutes] = useState(15);
 
   return (
     <div className='background'>
-      <div className='timerArea'>
+     
+      <section className='TimerAndCalendar'>
+        <ReactCalendar/>
+      <div >
       <SettingsContext.Provider value={{
         showSettings,
         setShowSettings,
@@ -26,7 +29,8 @@ const [breakMinutes, setBreakMinutes] = useState(15);
         {showSettings ? <Settings /> : <PomodoroTimer />}
       </SettingsContext.Provider>
       </div>
-<ReactCalendar/>
+</section>
+
     </div>
   )
 }

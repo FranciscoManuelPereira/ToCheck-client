@@ -1,5 +1,5 @@
 .slider{
-    height: 40px;
+    height: 35px;
     border: 2px solid var(--red);
     border-radius: 20px;
 }
@@ -7,8 +7,8 @@
 .thumb{
     background-color: var(--red);
     cursor:pointer;
-    width:40px;
-    height: 40px;
+    width:35px;
+    height: 35px;
     border-radius: 20px;
 }
 
