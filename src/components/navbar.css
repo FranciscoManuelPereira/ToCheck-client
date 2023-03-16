@@ -26,4 +26,16 @@
     height: 40px;
     border-radius: 5px;
     letter-spacing: 0.7px;
+    position: relative;
+    left: 75vw;
+    bottom: 5px;
+  }
+
+  .userImage{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 10px;
+    left: 75vw;
+    margin-right: 15px;
   }

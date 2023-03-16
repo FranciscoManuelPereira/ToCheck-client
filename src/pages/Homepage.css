@@ -19,7 +19,44 @@
     50%{background-position:100% 87%}
     100%{background-position:0% 14%}
 }
+ 
 
+/*  #light {
+    background: linear-gradient(133deg, #e4cd6d, #f0ae53, #dbbec7);
+    background-size: 600% 600%;
+
+    -webkit-animation: CSSGRADIENTANIMATOR 28s ease infinite;
+    animation: CSSGRADIENTANIMATOR 28s ease infinite;
+  }
+  @-webkit-keyframes CSSGRADIENTANIMATOR {
+    0%{background-position:0% 14%}
+    50%{background-position:100% 87%}
+    100%{background-position:0% 14%}
+}
+@keyframes CSSGRADIENTANIMATOR {
+    0%{background-position:0% 14%}
+    50%{background-position:100% 87%}
+    100%{background-position:0% 14%}
+}
+
+#dark{
+    background: linear-gradient(140deg, #344b31, #855e0e, #6a3d3d);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+} */
 .TimerAndCalendar{
     display: flex;
     justify-content: space-evenly;

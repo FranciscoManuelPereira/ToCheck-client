@@ -16,6 +16,7 @@ import Logout from "./components/Logout";
 import { useEffect } from "react";
 import {gapi} from 'gapi-script'
 
+
 /* import ReactCalendar from "./components/ReactCalendar"; */
 
 /* import { GoogleLogin } from "@react-oauth/google"; */
@@ -23,6 +24,8 @@ import {gapi} from 'gapi-script'
 const clientId = "343027757721-ud4anqta8isb3p6h830dhf37qnhifvsm.apps.googleusercontent.com"
 
 function App() {
+
+  
 
 /*   useEffect(() => {
     function start() {
@@ -37,10 +40,12 @@ function App() {
    var accessToken = gapi.auth.getToken().access_token; */
 
   return (
+    
     <div className="App">
       <Navbar />
 {/*       <LoginGoogle2 />
       <Logout /> */}
+      
 
       <Routes>
         <Route path="/" element={<Homepage />} />
@@ -61,6 +66,7 @@ function App() {
 
       <Footer />
     </div>
+    
   );
 }
 
