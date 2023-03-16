@@ -180,7 +180,7 @@ function EditTask({ selectedTask, getTasks }) {
         </form> */}
 
         {/*       {task && <Link to={`/projects/edit/${project._id}`}> Edit project </Link>} */}
-        <h3>No need for this one?</h3>
+        <h3>No need for this one? <br/>Then, you can delete!</h3>
         <button className='deleteButton' onClick={deleteTask}>Delete</button>
         </div>
       </section>

@@ -77,7 +77,7 @@ function AddTask({ day, getTasks }) {
       <div className="addTaskDiv">
         <div className="titlesDiv">
           <h1>What do we have new?</h1>
-          <div className="subtitleAddTask">Let's GO!! Add it below  </div>
+          <div className="subtitleAddTask">Let's GO!! Add it below </div>
           <h3>{selectedDay}</h3>
         </div>
         <div>

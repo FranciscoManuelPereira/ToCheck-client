@@ -20,6 +20,7 @@ h3 {
   font-size: large;
 }
 
+
 @keyframes move {
   0% {
     transform: translateX(0);
@@ -65,15 +66,14 @@ h1 {
 }
 
 .sectionAddTask {
-  background-image: url("../assets/possibleBackground.jpg");
-  background-repeat: no-repeat;
+  background-color: rgb(34, 48,63);
   height: 21.9em;
 }
 
 .addTaskDiv {
   background-color: rgb(255, 255, 255);
   width: 40vw;
-  height: 60vh;
+  height: 70vh;
   font-size: 80%;
   font-weight: bolder;
   margin-top: 3.8vh;
@@ -95,6 +95,10 @@ h1 {
   animation: slide-up 0.5s forwards;
 }
 
+.addTaskDiv label{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 @keyframes slide-up {
   to {
     top: 0; /* Move up to the top of the screen */
