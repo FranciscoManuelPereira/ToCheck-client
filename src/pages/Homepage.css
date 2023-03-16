@@ -69,6 +69,7 @@
     justify-content: center;
     align-items: center;
    height: 50vh;
+   width: 15vw;
     background-color:rgb(34, 48, 63);
   color: #eee;
   padding: 10px;
@@ -104,6 +105,39 @@ button.with-text{
     float:left;
     margin-right: 5px;
   }
+
+  .timerAreaSettings{
+    height: 30vh;
+    width: 15vw;
+    background-color:rgb(34, 48, 63);
+    color: #eee;
+    padding: 10px 20px;
+      margin-top: 10vh;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px white;
+  }
+
+  .slider{
+    height: 35px;
+    border: 2px solid var(--red);
+    border-radius: 20px;
+}
+
+.thumb{
+    background-color: var(--red);
+    cursor:pointer;
+    width:35px;
+    height: 35px;
+    border-radius: 20px;
+}
+
+.slider.green{
+    border: 2px solid var(--green);
+}
+.slider.green .thumb{
+    background-color: var(--green);
+}
+
   .CalendarArea{
     display: flex;
     justify-content: center;
