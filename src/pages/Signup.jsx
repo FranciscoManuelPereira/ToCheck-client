@@ -33,8 +33,8 @@ function Signup() {
   return (
     <section className='signupSection'>
     <div className='SignupDiv'>
-      <h1>Your life flow will change <hr/> upon your Signup!</h1>
-      <h4>After this step you will be able to organize your life better</h4>
+      <h1>Your life flow will change <br/> upon your Signup!</h1>
+      <h4>After this step you will give a TOUCHÉ in your life flow!</h4>
       <h4>If you already have a Google Account <Link>Click here!</Link></h4>
 
       </div>
