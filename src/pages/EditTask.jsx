@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
+import '../pages/editTask.css'
 
 function EditTask({ selectedTask, getTasks }) {
   const [title, setTitle] = useState(selectedTask.title);
@@ -13,8 +14,8 @@ function EditTask({ selectedTask, getTasks }) {
 
   const handleTitle = (e) => setTitle(e.target.value);
   const handleDescription = (e) => setDescription(e.target.value);
-  const handleStatus = (e) => setDescription(e.target.value);
-  const handleImportance = (e) => setDescription(e.target.value);
+  const handleStatus = (e) => setStatus(e.target.value);
+  const handleImportance = (e) => setImportance(e.target.value);
 /*   const handleCommentDescription = (e) => setcommentDescription(e.target.value); */
 
   const navigate = useNavigate();
@@ -109,9 +110,10 @@ function EditTask({ selectedTask, getTasks }) {
   } */
 
     return (
-      <section>
-        <h1>Edit Task:</h1>
-        <form onSubmit={handleSubmit}>
+      <section className="sectionEditTask">
+      <div className="editTaskDiv">
+        <h1 className='h1Edit'>Want to make some change?</h1>
+        <form className='formE' onSubmit={handleSubmit}>
           <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -178,8 +180,9 @@ function EditTask({ selectedTask, getTasks }) {
         </form> */}
 
         {/*       {task && <Link to={`/projects/edit/${project._id}`}> Edit project </Link>} */}
-
-        <button onClick={deleteTask}>Delete</button>
+        <h3>No need for this one?</h3>
+        <button className='deleteButton' onClick={deleteTask}>Delete</button>
+        </div>
       </section>
     );
 }

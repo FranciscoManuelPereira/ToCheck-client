@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context"; */
 import axios from "axios";
 import moment from "moment";
+import "../pages/addtask.css";
 
 function AddTask({ day, getTasks }) {
   const [title, setTitle] = useState("");
@@ -72,76 +73,93 @@ function AddTask({ day, getTasks }) {
   };
 
   return (
-    <section>
-      <h1>Create Task:</h1>
-      <h3>{selectedDay}</h3>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          value={title}
-          onChange={handleTitle}
-        />
+    <section className="sectionAddTask">
+      <div className="addTaskDiv">
+        <div className="titlesDiv">
+          <h1>What do we have new?</h1>
+          <div className="subtitleAddTask">Let's GO!! Add it below  </div>
+          <h3>{selectedDay}</h3>
+        </div>
+        <div>
+          <form className="formA" onSubmit={handleSubmit}>
+            <label className="label" htmlFor="title">
+              What do we have new?
+            </label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value={title}
+              onChange={handleTitle}
+            />
 
-        <label htmlFor="description">Description</label>
-        <input
-          type="text"
-          name="description"
-          id="description"
-          value={description}
-          onChange={handleDescription}
-        />
+            <label className="label" htmlFor="description">
+              Notes
+            </label>
+            <input
+              type="text"
+              name="description"
+              id="description"
+              value={description}
+              onChange={handleDescription}
+            />
 
-        <label htmlFor="status">Select the status:</label>
-        <select
-          name="status"
-          id="status"
-          onChange={handleStatus}
-          value={status}
-        >
-          <option value="Pending">Pending</option>
-          <option value="In Progress">In Progress</option>
-          <option value="Completed">Completed</option>
-        </select>
-        {/*         <input
-          type="text"
-          name="status"
-          id="status"
-          value={status}
-          
-        /> */}
+            <label className="label" htmlFor="status">
+              Tell me the status
+            </label>
+            <select
+              name="status"
+              id="status"
+              onChange={handleStatus}
+              value={status}
+            >
+              <option value="Pending">Pending</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+            {/*         <input
+            type="text"
+            name="status"
+            id="status"
+            value={status}
+            
+          /> */}
 
-        <label htmlFor="importance">Importance:</label>
-        <select
-          name="importance"
-          id="importance"
-          onChange={handleImportance}
-          value={importance}
-        >
-          <option value="High Priority" name="High Priority">
-            High Priority
-          </option>
-          <option value="Important" name="Important">
-            Important
-          </option>
-          <option value="Normal" name="Normal">
-            Normal
-          </option>
-        </select>
+            <label className="label" htmlFor="importance">
+              Is it important?
+            </label>
+            <select
+              name="importance"
+              id="importance"
+              onChange={handleImportance}
+              value={importance}
+            >
+              <option value="High Priority" name="High Priority">
+                YEAH!!
+              </option>
+              <option value="Important" name="Important">
+                Important
+              </option>
+              <option value="Normal" name="Normal">
+                Normal
+              </option>
+            </select>
 
-        <label htmlFor="date">Hour</label>
-        <input
-          type="time"
-          name="time"
-          id="time"
-          value={time}
-          onChange={handleDate}
-        />
+            <label className="label" htmlFor="date">
+              Hour
+            </label>
+            <input
+              type="time"
+              name="time"
+              id="time"
+              value={time}
+              onChange={handleDate}
+            />
 
-        <button type="submit">Create task</button>
-      </form>
+            <button type="submit">Let's do THIS!</button>
+          </form>
+        </div>
+      </div>
     </section>
   );
 }

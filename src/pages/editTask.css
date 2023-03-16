@@ -1,0 +1,175 @@
+* {
+    font-family:'Haettenschweiler';
+  }
+  
+  h3 {
+    animation: move 2s ease-in-out;
+    letter-spacing: 0.4px;
+    margin-bottom: 2px;
+    line-height: 1.5;
+    font-family: "Helvetica";
+  }
+  
+/*   .subtitleAddTask {
+    margin-bottom: 2px;
+    line-height: 1.5;
+    animation: move 2s ease-in-out;
+  }
+  .subtitleAddTask:before {
+    content: "\1F600";
+    font-size: large;
+  } */
+  
+  @keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes color {
+    0% {
+      color: orange;
+    }
+    50% {
+      color: black;
+    }
+    100% {
+      color: orange;
+    }
+  }
+  
+  .h1Edit {
+    margin-top: 3px;
+    letter-spacing: 0.3;
+    animation: move 2s ease-in-out;
+    font-size: 1.6em;
+    font-weight: bolder;
+    font-family: "Helvetica";
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .sectionEditTask{
+    background-image: url("../assets/possibleBackground.jpg");
+    height: 21.9em;
+  }
+  
+  .editTaskDiv {
+    background-color: rgb(255, 255, 255);
+    width: 40vw;
+    height: 60vh;
+    font-size: 80%;
+    font-weight: bolder;
+    margin-top: 4vh;
+    opacity: 0.9;
+    border-radius: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 32vw;
+    border: 2px solid white;
+    border-radius: 18px;
+    box-shadow: 0 0 15px white;
+    background-color: #ccc;
+    position: fixed;
+    bottom: -100px; /* Start off the screen */
+    left: 20%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for horizontal centering */
+    animation: slide-up 0.5s forwards;
+  }
+  
+  @keyframes slide-up {
+    to {
+      top: 0; /* Move up to the top of the screen */
+    }
+  }
+  
+  .formE {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 9px;
+  }
+  
+  .formE input {
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+  }
+  
+  .formE button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    margin-top: 9px;
+    height: 5vh;
+  }
+  
+  .formE button:active {
+    transform: scale(0.95);
+  }
+  
+  .formE button:hover {
+    border: 2px solid #ccc;
+    color: rgb(34, 48, 63);
+    background-color: rgb(249, 242, 207);
+  }
+  
+  .formE select {
+    font-size: 12px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(8, 8, 8);
+    appearance: none;
+    -moz-appearance: none;
+    background-image: url("../assets/273-2739733_white-drop-down-arrow.png");
+    background-size: 10px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 20px;
+  }
+  
+  .formE select:hover {
+    border: 2px solid #ccc;
+    color: #24351f;
+    opacity: 0.5;
+    background-color: rgb(252, 237, 182);
+  }
+
+  .deleteButton{
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    margin-top: 9px;
+    height: 5vh;
+  }
+
+  .deleteButton:active {
+    transform: scale(0.95);
+  }
+  
+  .deleteButton:hover {
+    border: 2px solid #ccc;
+    color: rgb(34, 48, 63);
+    background-color: rgb(249, 242, 207);
+  }
+  
+
+
+  
