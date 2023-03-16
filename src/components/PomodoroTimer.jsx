@@ -5,11 +5,13 @@ import PauseButton from "./PauseButton";
 import SettingsButton from "./SettingsButton";
 import { useContext, useState, useEffect, useRef } from "react";
 import SettingsContext from "./SettingsContext";
+import { AuthContext } from "../context/auth.context";
 
 const red = "#f54e4e";
 const green = "#4aec8c";
 
 function PomodoroTimer() {
+  const { setAuthContex, user } = useContext(AuthContext);
   const settingsInfo = useContext(SettingsContext);
 
   const [isPaused, setIsPaused] = useState(true);
@@ -69,6 +71,8 @@ function PomodoroTimer() {
 
   return (
     <div className="MainTimer">
+      {user && (
+        <>
       <div className="CircularProgressbar">
       <CircularProgressbar 
         value={percentage}
@@ -101,6 +105,8 @@ function PomodoroTimer() {
       <div style={{ marginTop: "20px" }}>
         <SettingsButton onClick={() => settingsInfo.setShowSettings(true)} />
       </div>
+      </>
+        )}
     </div>
   );
 }
