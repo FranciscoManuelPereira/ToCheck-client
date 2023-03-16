@@ -4,10 +4,9 @@ import PomodoroTimer from '../components/PomodoroTimer'
 import Settings from '../components/Settings';
 import SettingsContext from "../components/SettingsContext";
 import { createContext } from "react";
-import ReactSwitch from "react-switch";
+/* import ReactSwitch from "react-switch"; */
 import { AuthContext } from '../context/auth.context';
 import "./Homepage.css";
-import "../components/slider.css"
 
 export const ThemeContext = createContext(null);
 
