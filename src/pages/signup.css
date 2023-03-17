@@ -1,47 +1,59 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: '"Trebuchet MS";'
+  font-family: '"Trebuchet MS";';
 }
 
 .signupSection {
   background-color: rgb(250, 223, 176);
-  width: 100%;
-  height: 100%;
   display: flex;
-  
 }
 
-.SignupDiv{
-  
-}
-
-h2 {
-/* color: white; */
-}
-
-.mainDivForm{
-  width: 40vw;
-  height: 55vh;
+.signupDiv {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-/*   align-items: flex-end; */
-  border-radius: 1em;
-/*   background-color: white; */
-  transition: 0.2s;
 }
 
-.signUpForm {
-  width: 50vw;
-  height: 60vh;
+.signUpDiv h1 {
+  
+}
+
+.mainDivForm {
+  background-color: rgb(255, 255, 255);
+  width: 30vw;
+  height: 65vh;
+  font-weight: bold;
+  margin-top: 3.8vh;
+  opacity: 0.9;
+  border-radius: 1px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 40vw;
+  margin-top: 1.1vh;
+  margin-bottom: 2.5vh;
+  border: 1.4px solid white;
+  box-shadow: 0 0 15px white;
+  background-color: #ccc;
+  bottom: -100px; /* Start off the screen */
+  left: 20%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for horizontal centering */
+  animation: slide-up 0.5s forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*   align-items: flex-end; */
   border-radius: 1em;
-  background-color: white;
+  /*   background-color: white; */
+  transition: 0.2s;
+}
 
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: 0.2s;
 }
 
@@ -72,5 +84,4 @@ h2 {
 }
 
 label {
-  text-decoration: double;
 }
