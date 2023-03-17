@@ -13,13 +13,13 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  
-
+  padding-top: 30px;
 }
 
 .signUpDiv > h1 {
   margin-bottom: 20px;
   margin-top: 20px;
+
 }
 
 .mainDivForm {
@@ -47,10 +47,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /*   align-items: flex-end; */
-  border-radius: 1em;
-  /*   background-color: white; */
+  border-radius: 1px;
   transition: 0.2s;
+
 }
 
 .mainDivForm h2{
