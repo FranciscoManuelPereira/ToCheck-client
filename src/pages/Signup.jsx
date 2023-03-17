@@ -34,8 +34,8 @@ function Signup() {
     <section className='signupSection'>
     <div className='signupDiv'>
       <h1>Your life flow will change <br/> upon your Signup!</h1>
-      <h4>After this step you will give a TOUCHÉ in your life flow!</h4>
-      <h4>If you already have a Google Account <Link>Click here!</Link></h4>
+      <h4>After this step you will give a TOUCHÉ <br/> in your life flow!</h4>
+      <img src="../assets/" alt="" className="source" />
 
       </div>
 

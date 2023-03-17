@@ -12,10 +12,14 @@
 .signupDiv {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  
+
 }
 
-.signUpDiv h1 {
-  
+.signUpDiv > h1 {
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .mainDivForm {
@@ -48,6 +52,40 @@
   /*   background-color: white; */
   transition: 0.2s;
 }
+
+.mainDivForm h2{
+  animation: slide-up 0.5s forwards;
+  animation: move 2s ease-in-out;
+}
+.mainDivForm:before {
+  font-size: large;
+}
+
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes color {
+  0% {
+    color: orange;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: orange;
+  }
+}
+
 
 .signUpForm {
   display: flex;

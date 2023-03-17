@@ -114,7 +114,8 @@ h1 {
 .formA input {
   border: none;
   border-radius: 5px;
-  height: 25px;
+  height: 29px;
+  width: 18vw;
 }
 
 .formA button {

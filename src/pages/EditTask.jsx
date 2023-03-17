@@ -114,7 +114,7 @@ function EditTask({ selectedTask, getTasks }) {
       <div className="editTaskDiv">
         <h1 className='h1Edit'>Want to make some change?</h1>
         <form className='formE' onSubmit={handleSubmit}>
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">What do we change?</label>
           <input
             type="text"
             name="title"

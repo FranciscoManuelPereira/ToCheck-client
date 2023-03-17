@@ -76,7 +76,7 @@ function AddTask({ day, getTasks }) {
     <section className="sectionAddTask">
       <div className="addTaskDiv">
         <div className="titlesDiv">
-          <h1>What do we have new?</h1>
+          <h1>New things to do?</h1>
           <div className="subtitleAddTask">Let's GO!! Add it below </div>
           <h3>{selectedDay}</h3>
         </div>
@@ -94,7 +94,7 @@ function AddTask({ day, getTasks }) {
             />
 
             <label className="label" htmlFor="description">
-              Notes
+              Additional Notes
             </label>
             <input
               type="text"
