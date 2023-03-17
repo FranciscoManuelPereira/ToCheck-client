@@ -53,7 +53,7 @@ const [breakMinutes, setBreakMinutes] = useState(15);
 <div className='logoffHomepage'>
 <section className='firstSection'>
   <h1>Welcome, it's time <span>ToCheck</span></h1>
-<img src="src/assets/organizational-life-cycle.png" alt="cycle organizational life" />  
+<img src="https://res.cloudinary.com/dxsebwid5/image/upload/v1679043489/organizational-life-cycle_gaacb6.webp" alt="cycle organizational life" />  
 </section>
 </div>
 
