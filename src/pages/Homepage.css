@@ -153,3 +153,49 @@ padding: 10vh;
    box-shadow: 0 10px 25px white;
     
   }
+
+  .logoffHomepage{
+    background: linear-gradient(140deg, #344b31, #855e0e, #6a3d3d);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+  }
+
+  .firstSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .firstSection > h1{
+    font-size: 50px;
+    margin: 25px 0px;
+    color: white;
+  }
+
+  .firstSection > h1 > span{
+    font-family:'Lobster', cursive;
+    color: rgb(255, 154, 0);
+    text-shadow: 5px 3px #000000;
+  }
+
+  .firstSection > img{
+    width: 90vw;
+    margin: 20px 0px 50px 0px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px white;
+  }
+

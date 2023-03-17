@@ -11,7 +11,7 @@ function Footer() {
           <p className="card-text">TOCHÉ in your life flow!</p>
           <p className="card-text">contact@tocheck.com</p>
           <p className="card-text">
-            <small class="text-muted">
+            <small className="text-muted">
               <span>
                 Developed by{" "}
                 <a href="https://github.com/marianamedeirosfranco">
