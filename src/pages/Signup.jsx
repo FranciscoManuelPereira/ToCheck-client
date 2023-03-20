@@ -33,15 +33,14 @@ function Signup() {
   return (
     <section className='signupSection'>
     <div className='signupDiv'>
-      <h1>Your life flow will change <br/> upon your Signup!</h1>
+      <h3>Your life flow will change <br/> upon your Signup!</h3>
+      <img src="https://res.cloudinary.com/dxsebwid5/image/upload/v1679043489/organizational-life-cycle_gaacb6.webp" alt="cycle organizational life" />  
       <h4>After this step you will give a TOUCHÉ <br/> in your life flow!</h4>
-      <img src="../assets/" alt="" className="source" />
-
       </div>
 
       <div className='mainDivForm'>
       
-      <h2>Signup</h2>
+      <h2>Signup Here!</h2>
 
       <form className='signUpForm' onSubmit={handleSubmit}>
         <label htmlFor="name"> Name</label>
